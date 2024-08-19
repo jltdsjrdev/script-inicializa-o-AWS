@@ -20,9 +20,9 @@ sudo systemctl enable nginx
 sudo mkdir -p /usr/share/nginx/html
 
 # Criar a página HTML
-sudo bash -c 'cat > /usr/share/nginx/html/index.html' << EOF
+sudo bash -c 'cat > /usr/share/nginx/html/index.html' << 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,7 +46,6 @@ sudo bash -c 'cat > /usr/share/nginx/html/index.html' << EOF
     <p>Curso DevOps - A.d.a tech - Santander</p>
   </body>
 </html>
-EOF
 
 # Criar o arquivo CSS
 
@@ -150,8 +149,6 @@ p {
     background-color: #f39c12;
   }
 }
-
-EOF
 
 # Reiniciar o Nginx para garantir que as mudanças sejam aplicadas
 sudo systemctl restart nginx
