@@ -20,9 +20,9 @@ sudo systemctl enable nginx
 sudo mkdir -p /usr/share/nginx/html
 
 # Criar a página HTML
-sudo bash -c 'cat > /usr/share/nginx/html/index.html' << 
+sudo bash -c 'cat > /usr/share/nginx/html/index.html' << EOF
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +30,7 @@ sudo bash -c 'cat > /usr/share/nginx/html/index.html' <<
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="shortcut icon" href="https://ada-site-frontend.s3.sa-east-1.amazonaws.com/home/header-logo.svg" type="image/x-icon">
-    <title>Projeto 03</title>
+    <title>Projeto Servidor Nginx</title>
 </head>
 <body>
     <h1>Bem-vindo ao servidor Nginx!</h1>
@@ -46,6 +46,7 @@ sudo bash -c 'cat > /usr/share/nginx/html/index.html' <<
     <p>Curso DevOps - A.d.a tech - Santander</p>
   </body>
 </html>
+EOF
 
 # Criar o arquivo CSS
 
@@ -150,9 +151,7 @@ p {
   }
 }
 
+EOF
+
 # Reiniciar o Nginx para garantir que as mudanças sejam aplicadas
 sudo systemctl restart nginx
-
-# Configurar Nginx para iniciar automaticamente na inicialização
-systemctl enable nginx
-
